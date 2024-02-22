@@ -6,6 +6,7 @@
     "dev": "NEXT_PRIVATE_LOCAL_WEBPACK=true next dev",
     "build:web-component": "ts-node ./scripts/build.ts",
     "build": "NEXT_PRIVATE_LOCAL_WEBPACK=true next build && npm run build:web-component",
+    "setup:local": "ts-node ./scripts/setup-local.ts",
     "start": "next start",
     "lint": "next lint"
   },
