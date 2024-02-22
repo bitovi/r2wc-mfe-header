@@ -1,0 +1,5 @@
+services:
+  header:
+    build: .
+    ports:
+      - "3001:3001"
