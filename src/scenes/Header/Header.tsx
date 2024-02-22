@@ -1,4 +1,9 @@
-import type { CSSProperties, FC } from "react";
+import type {
+  CSSProperties,
+  ComponentPropsWithoutRef,
+  FC,
+  ReactNode,
+} from "react";
 
 const headerStyles: Record<string, CSSProperties | undefined> = {
   header: {
@@ -53,25 +58,25 @@ const Header: FC = () => {
       <nav style={headerStyles.navigation}>
         <ul style={headerStyles.navigationList}>
           <li>
-            <a style={headerStyles.link}>Services</a>
+            <NavigationLink>Services</NavigationLink>
           </li>
           <li>
-            <a style={headerStyles.link}>Client Work</a>
+            <NavigationLink>Client Work</NavigationLink>
           </li>
           <li>
-            <a style={headerStyles.link}>Our Team</a>
+            <NavigationLink>Our Team</NavigationLink>
           </li>
           <li>
-            <a style={headerStyles.link}>Open Source</a>
+            <NavigationLink>Open Source</NavigationLink>
           </li>
           <li>
-            <a style={headerStyles.link}>Blog</a>
+            <NavigationLink>Blog</NavigationLink>
           </li>
           <li>
-            <a style={headerStyles.link}>Academy</a>
+            <NavigationLink>Academy</NavigationLink>
           </li>
           <li>
-            <a style={headerStyles.link}>Jobs</a>
+            <NavigationLink>Jobs</NavigationLink>
           </li>
         </ul>
       </nav>
@@ -81,3 +86,14 @@ const Header: FC = () => {
 };
 
 export default Header;
+
+interface NavigationLinkProps
+  extends Omit<ComponentPropsWithoutRef<"a">, "style"> {}
+
+const NavigationLink: FC<NavigationLinkProps> = ({ children, ...props }) => {
+  return (
+    <a {...props} style={headerStyles.link}>
+      {children}
+    </a>
+  );
+};
