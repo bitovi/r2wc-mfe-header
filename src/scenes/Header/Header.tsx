@@ -1,9 +1,4 @@
-import type {
-  CSSProperties,
-  ComponentPropsWithoutRef,
-  FC,
-  ReactNode,
-} from "react";
+import type { CSSProperties, ComponentPropsWithoutRef, FC } from "react";
 
 const headerStyles: Record<string, CSSProperties | undefined> = {
   header: {
